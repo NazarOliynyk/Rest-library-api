@@ -82,7 +82,7 @@ public class BookController {
                     Integer page,
 
             @ApiParam(value = "count of objects per one page")
-            @RequestParam(name = "size", defaultValue = "10")
+            @RequestParam(name = "size", defaultValue = "1000")
                     Integer size,
 
             @ApiParam(value = "custom sort parameter\ncan also assume 'square' and 'volume' parameters")

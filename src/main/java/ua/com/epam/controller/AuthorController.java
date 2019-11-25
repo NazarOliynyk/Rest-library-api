@@ -46,6 +46,7 @@ public class AuthorController {
         }
     }
 
+    @CrossOrigin(origins = "*")
     @ApiOperation(value = "get Author object by 'authorId'", tags = {"Author"})
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Special Author object in JSON", response = AuthorDto.class),

@@ -158,12 +158,13 @@ public class AuthorService {
             throw new AuthorNotFoundException(authorId);
         }
 
-        if (authorId != authorDto.getAuthorId()) {
-            throw new IdMismatchException();
-        }
+//        if (authorId != authorDto.getAuthorId()) {
+//            throw new IdMismatchException();
+//        }
 
         Author proxy = opt.get();
 
+        proxy.setAuthorId(authorDto.getAuthorId());
         proxy.setFirstName(authorDto.getAuthorName().getFirst());
         proxy.setSecondName(authorDto.getAuthorName().getSecond());
         proxy.setDescription(authorDto.getAuthorDescription());
