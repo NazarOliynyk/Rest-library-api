@@ -46,7 +46,7 @@ public class AuthorController {
         }
     }
 
-    @CrossOrigin(origins = "*")
+   // @CrossOrigin(origins = "*")
     @ApiOperation(value = "get Author object by 'authorId'", tags = {"Author"})
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Special Author object in JSON", response = AuthorDto.class),
@@ -172,6 +172,7 @@ public class AuthorController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
+   // @CrossOrigin(origins = "*")
     @ApiOperation(value = "create new Author", tags = {"Author"})
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "newly created Author", response = AuthorDto.class),
@@ -186,6 +187,7 @@ public class AuthorController {
             @ApiParam(required = true, value = "Author to add", name = "Author object")
             @RequestBody @Valid
                     AuthorDto postAuthor) {
+        //System.out.println(postAuthor.toString());
         AuthorDto response = authorService.addNewAuthor(postAuthor);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
